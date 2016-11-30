@@ -100,13 +100,6 @@ class App extends Component {
             })
             .styles({
               fill: getFill,
-              stroke: _.flow(
-                getFill,
-                color,
-                c => c.brighter()
-              ),
-              'stroke-opacity': 1,
-              'stroke-width': .5,
             })
             .merge(circles)
             .attrs({
@@ -121,7 +114,7 @@ class App extends Component {
         <svg width={'100%'} height={'100%'} viewBox={`0 0 ${width} ${height}`}>
           <defs>
             <filter id="glow">
-              <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
               <feMerge>
                 <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
@@ -135,7 +128,7 @@ class App extends Component {
                 key={i}
                 style={{
                   fill: 'none',
-                  stroke: '#ececec',
+                  stroke: '#999',
                 }}
               />
             )}
