@@ -51,7 +51,7 @@ class App extends Component {
 
     const scaleSize = scaleBand()
       .domain(spectralTypes)
-      .range([15, 5]);
+      .range([16, 3]);
 
     const getColor = _.flow(
       scaleColor,
@@ -111,11 +111,11 @@ class App extends Component {
     return (
       <div>
         <svg width={'100%'} height={'100%'} viewBox={`0 0 ${width} ${height}`} style={{
-          backgroundColor: '#010625',
+          backgroundColor: 'rgb(18, 26, 70)',
         }}>
           <defs>
             <filter id="glow">
-              <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
               <feMerge>
                 <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
@@ -139,11 +139,11 @@ class App extends Component {
           }}/>
           <g transform={`translate(50 800)`}>
             {spectralTypes.map((type, i) => (
-              <g key={i} transform={`translate(${i * 30} 0)`}>
+              <g key={i} transform={`translate(${i * 32} 0)`}>
                 <circle
                   cx={0}
-                  cy={0}
-                  r={scaleSize(type)}
+                  cy={scaleSize('O') - scaleSize(type)}
+                  r={ scaleSize(type)}
                   style={{
                     fill: getColor(type),
                   }}

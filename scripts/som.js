@@ -24,10 +24,10 @@ const k = new Kohonen({
   data: _.map(_.get('data'), stars),
   neurons,
   maxStep: 10000,
-  maxLearningCoef: .9,
+  maxLearningCoef: 1,
   minLearningCoef: .001,
-  maxNeighborhood: 3,
-  minNeighborhood: 1
+  maxNeighborhood: 5,
+  minNeighborhood: 1,
 });
 
 k.training((neurons, step) => console.log(step));

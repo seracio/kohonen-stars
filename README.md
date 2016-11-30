@@ -1,6 +1,6 @@
 # kohonen-stars
 
-![capture](https://cdn.rawgit.com/seracio/kohonen-stars/master/images/capture6.svg)
+![capture](https://cdn.rawgit.com/seracio/kohonen-stars/master/images/capture7.svg)
 
 ## Vis
 
