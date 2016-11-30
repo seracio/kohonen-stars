@@ -1,4 +1,5 @@
 import { range } from 'd3-array';
+import { color } from 'd3-color';
 import { forceCollide, forceSimulation, forceX, forceY } from 'd3-force';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { interpolateSpectral } from 'd3-scale-chromatic';
@@ -98,7 +99,14 @@ class App extends Component {
               r: getSize,
             })
             .styles({
-              fill: getFill
+              fill: getFill,
+              stroke: _.flow(
+                getFill,
+                color,
+                c => c.brighter()
+              ),
+              'stroke-opacity': 1,
+              'stroke-width': .5,
             })
             .merge(circles)
             .attrs({
@@ -111,6 +119,15 @@ class App extends Component {
     return (
       <div>
         <svg width={'100%'} height={'100%'} viewBox={`0 0 ${width} ${height}`}>
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
           <g>
             {neurons.map((n, i) =>
               <path
@@ -118,12 +135,14 @@ class App extends Component {
                 key={i}
                 style={{
                   fill: 'none',
-                  stroke: '#ccc',
+                  stroke: '#ececec',
                 }}
               />
             )}
           </g>
-          <g ref={startSimulation}/>
+          <g ref={startSimulation} style={{
+            filter: 'url(#glow)'
+          }}/>
           <g transform={`translate(50 800)`}>
             {spectralTypes.map((type, i) => (
               <g key={i} transform={`translate(${i * 30} 0)`}>
@@ -132,14 +151,14 @@ class App extends Component {
                   cy={0}
                   r={scaleSize(type)}
                   style={{
-                    fill: getColor(type)
+                    fill: getColor(type),
                   }}
                 />
                 <text
                   x={0}
                   y={30}
                   style={{
-                    fill: '#666',
+                    fill: '#999',
                     fontFamily: 'sans-serif',
                     fontSize: '12px',
                     textAnchor: 'middle'
@@ -149,7 +168,7 @@ class App extends Component {
                   <text x={20}
                         y={30}
                         style={{
-                          fill: '#666',
+                          fill: '#999',
                           fontFamily: 'sans-serif',
                           fontSize: '12px',
                           textAnchor: 'start'
