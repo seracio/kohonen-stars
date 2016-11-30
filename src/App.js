@@ -1,5 +1,4 @@
 import { range } from 'd3-array';
-import { color } from 'd3-color';
 import { forceCollide, forceSimulation, forceX, forceY } from 'd3-force';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { interpolateSpectral } from 'd3-scale-chromatic';
@@ -111,7 +110,9 @@ class App extends Component {
 
     return (
       <div>
-        <svg width={'100%'} height={'100%'} viewBox={`0 0 ${width} ${height}`}>
+        <svg width={'100%'} height={'100%'} viewBox={`0 0 ${width} ${height}`} style={{
+          backgroundColor: '#010625',
+        }}>
           <defs>
             <filter id="glow">
               <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
