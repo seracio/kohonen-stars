@@ -19,6 +19,7 @@ class App extends Component {
     const stepX = 60;
     const width = 900;
     const height = 900;
+    const spectralTypes = ['O', 'B', 'A', 'F', 'G', 'K', 'M'];
 
     const neurons = hexagonHelper.generateGrid(haxagonsByLine, haxagonsByLine);
 
@@ -45,11 +46,11 @@ class App extends Component {
     );
 
     const scaleColor = scaleBand()
-      .domain(['O', 'B', 'A', 'F', 'G', 'K', 'M'])
+      .domain(spectralTypes)
       .range([1, 0]);
 
     const scaleSize = scaleBand()
-      .domain(['O', 'B', 'A', 'F', 'G', 'K', 'M'])
+      .domain(spectralTypes)
       .range([15, 5]);
 
     const getColor = _.flow(
@@ -73,13 +74,13 @@ class App extends Component {
 
       const getFill = _.flow(
         _.get('[1].spectralType'),
-        _.slice(0,1),
+        _.slice(0, 1),
         getColor,
       );
 
       const getSize = _.flow(
         _.get('[1].spectralType'),
-        _.slice(0,1),
+        _.slice(0, 1),
         scaleSize,
       );
 
@@ -122,7 +123,40 @@ class App extends Component {
               />
             )}
           </g>
-          <g ref={startSimulation}>
+          <g ref={startSimulation}/>
+          <g transform={`translate(50 800)`}>
+            {spectralTypes.map((type, i) => (
+              <g key={i} transform={`translate(${i * 30} 0)`}>
+                <circle
+                  cx={0}
+                  cy={0}
+                  r={scaleSize(type)}
+                  style={{
+                    fill: getColor(type)
+                  }}
+                />
+                <text
+                  x={0}
+                  y={30}
+                  style={{
+                    fill: '#666',
+                    fontFamily: 'sans-serif',
+                    fontSize: '12px',
+                    textAnchor: 'middle'
+                  }}
+                >{type}</text>
+                {i === spectralTypes.length - 1 && (
+                  <text x={20}
+                        y={30}
+                        style={{
+                          fill: '#666',
+                          fontFamily: 'sans-serif',
+                          fontSize: '12px',
+                          textAnchor: 'start'
+                        }}>spectral types</text>
+                )}
+              </g>
+            ))}
           </g>
         </svg>
       </div>
