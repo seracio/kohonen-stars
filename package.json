@@ -14,7 +14,7 @@
     "d3-selection-multi": "^1.0.0",
     "d3-shape": "^1.0.4",
     "filendir": "^1.0.0",
-    "kohonen": "^0.6.1",
+    "kohonen": "0.7.0",
     "lodash": "^4.17.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"

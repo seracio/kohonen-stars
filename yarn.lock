@@ -1500,25 +1500,13 @@ d@^0.1.1, d@~0.1.1:
   dependencies:
     es5-ext "~0.10.2"
 
-d3-array, d3-array@1:
+d3-array, d3-array@1, d3-array@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.0.2.tgz#174237bf356a852fadd6af87743d928631de7655"
-
-d3-array@~0.7.0, d3-array@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-0.7.1.tgz#a321c21558459d994eb4ad47b478240e64933942"
-
-d3-collection@~0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/d3-collection/-/d3-collection-0.1.2.tgz#d1495f5720add3835117e1916607d2b05b186c5a"
 
 d3-collection@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-collection/-/d3-collection-1.0.2.tgz#df5acb5400443e9eabe9c1379896c67e52426b39"
-
-d3-color@~0.4.0:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-0.4.2.tgz#df013e789d9bfef0f8ea3986c92340cdf340d8a0"
 
 d3-color@1:
   version "1.0.2"
@@ -1541,19 +1529,9 @@ d3-force:
     d3-quadtree "1"
     d3-timer "1"
 
-d3-format@~0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-0.5.1.tgz#9447d7c95c84b15d34c138975dbf0489a412e405"
-
 d3-format@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.0.2.tgz#138618320b4bbeb43b5c0ff30519079fbbd7375e"
-
-d3-interpolate@~0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-0.7.0.tgz#1f9ff17cd8c90b7f121f6743e6ef1062dfe898d1"
-  dependencies:
-    d3-color "~0.4.0"
 
 d3-interpolate@1:
   version "1.1.2"
@@ -1569,11 +1547,11 @@ d3-quadtree@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-quadtree/-/d3-quadtree-1.0.2.tgz#e7e873af06aaa427eaa4af094cc4cbfb350b9e38"
 
-d3-random@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/d3-random/-/d3-random-0.2.1.tgz#6141837199e6e7dbf13125e01e44b2c83e5e483f"
+d3-random@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/d3-random/-/d3-random-1.0.2.tgz#83ff6a391206209c30565299e43c6549866db269"
 
-d3-scale:
+d3-scale, d3-scale@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-1.0.4.tgz#50e28bf6a193b706745528515ed9b3d44205a033"
   dependencies:
@@ -1590,18 +1568,6 @@ d3-scale-chromatic:
   resolved "https://registry.yarnpkg.com/d3-scale-chromatic/-/d3-scale-chromatic-1.1.0.tgz#eddcc50c4fd48d98560105f349bf5bc921476da1"
   dependencies:
     d3-interpolate "1"
-
-d3-scale@0.6.4:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-0.6.4.tgz#e398e146fa53dec5370ed1f045ef0426c1a3fd90"
-  dependencies:
-    d3-array "~0.7.0"
-    d3-collection "~0.1.0"
-    d3-color "~0.4.0"
-    d3-format "~0.5.0"
-    d3-interpolate "~0.7.0"
-    d3-time "~0.2.0"
-    d3-time-format "~0.3.0"
 
 d3-selection, d3-selection@1:
   version "1.0.3"
@@ -1620,21 +1586,11 @@ d3-shape:
   dependencies:
     d3-path "1"
 
-d3-time-format@~0.3.0:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-0.3.2.tgz#9c30e90a4078f93fac15e27b2016865488c007c1"
-  dependencies:
-    d3-time "~0.2.0"
-
 d3-time-format@2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-2.0.3.tgz#3241569b74ddc9c42e0689c0e8a903579fd6280a"
   dependencies:
     d3-time "1"
-
-d3-time@~0.2.0:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-0.2.6.tgz#587553e9ea9e055462d419c7aa94e9477be15cb0"
 
 d3-time@1:
   version "1.0.4"
@@ -2241,7 +2197,7 @@ filename-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.0.tgz#996e3e80479b98b9897f15a8a58b3d084e926775"
 
-filendir:
+filendir, filendir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/filendir/-/filendir-1.0.0.tgz#745b445afcc4970a4cdb00fd9539c77ed942adf6"
   dependencies:
@@ -3321,14 +3277,15 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kohonen:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/kohonen/-/kohonen-0.6.1.tgz#f50970ed0d2a94fe3cbd87f08fbec449240861fb"
+kohonen@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/kohonen/-/kohonen-0.7.0.tgz#b0202f7794b0ad191e48bdf2b31f4acb70ab8219"
   dependencies:
-    d3-array "0.7.1"
-    d3-random "0.2.1"
-    d3-scale "0.6.4"
-    lodash "4.3.0"
+    d3-array "1.0.2"
+    d3-random "1.0.2"
+    d3-scale "1.0.4"
+    filendir "^1.0.0"
+    lodash "4.17.2"
     ml-pca "1.1.2"
 
 lazy-cache@^1.0.3:
@@ -3367,7 +3324,7 @@ loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-lodash, lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.3.0, "lodash@>=3.5 <5":
+lodash, lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.3.0, "lodash@>=3.5 <5", lodash@4.17.2:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -3480,10 +3437,6 @@ lodash.words@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash.words/-/lodash.words-3.2.0.tgz#4e2a8649bc08745b17c695b1a3ce8fee596623b3"
   dependencies:
     lodash._root "^3.0.0"
-
-lodash@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.3.0.tgz#efd9c4a6ec53f3b05412429915c3e4824e4d25a4"
 
 longest@^1.0.1:
   version "1.0.1"
