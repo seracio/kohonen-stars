@@ -25,10 +25,10 @@ There is a [first script](./scripts/parseDat.js) to parse the 2 dat files:
 * [stars.dat](./data/stars.dat): description of each stars including their [spectral type](https://en.wikipedia.org/wiki/Stellar_classification)
 * [fluxes.dat](./data/fluxes.dat): 2799 data for each stars
 
-The [second script](./scripts/som.js) is the SOM calculation itself using our lib 
-The repository already provides a generated grid, but you can override it by executing which will launch the 2 scripts: 
+The [second script](./scripts/som.js) is the SOM calculation itself using our lib (the repository already provides a generated grid) 
 
 ```
+npm run parse
 npm run som
 ```
 
